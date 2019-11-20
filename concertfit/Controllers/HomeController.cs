@@ -6,12 +6,15 @@ using System.Net;
 using System.Threading.Tasks;
 using concertfit.Models;
 using Microsoft.AspNetCore.Mvc;
+using SpotifyArtistsResponse;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace concertfit.Controllers
 {
-    [Route("api")]
+    
+    [Route("TicketMaster")]
+    [BindProperties(SupportsGet = true)]
     public class HomeController : Controller
     {
         [HttpGet]
@@ -35,17 +38,20 @@ namespace concertfit.Controllers
 
                 foreach (SpotifyArtistsResponse.TopLevel topLevel in topLevelSpotify)
                 {
-                    ConcertfitResponse concertfitResponse = new ConcertfitResponse();
-                    concertfitResponse.Artist = topLevel.Artist;
-                    concertfitResponse.Track = topLevel.Tracks;
-                    concertfitResponse.EventName = events[topLevel.Artist].Name;
-                    concertfitResponse.EventUrl = events[topLevel.Artist].Url.ToString();
-                    concertfitResponse.Dates = events[topLevel.Artist].Dates;
-                    concertfitResponseList.Add(concertfitResponse);
-                }
+                    ConcertfitResponse concertfitResponse = new ConcertfitResponse
+                    {
+                        Artist = topLevel.Artist,
+                        Track = topLevel.Tracks,
+                        EventName = events[topLevel.Artist].Name,
+                        EventUrl = events[topLevel.Artist].Url.ToString(),
+                        Dates = events[topLevel.Artist].Dates,
+                    };
 
+                    concertfitResponseList.Add(concertfitResponse); 
+                }
                 return concertfitResponseList;
             }
         }
     }
 }
+

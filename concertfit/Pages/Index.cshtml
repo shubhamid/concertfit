@@ -2,9 +2,23 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
+    var SpotifyMasters = (SpotifyArtistsResponse.TopLevel[])ViewData["SpotifyMaster"];
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Spotify Artist</h1>
+    <hr />
+    <table border="1" width="90%">
+        <tr>
+            <th>Artist Name</th>
+        </tr>
+           @foreach (SpotifyArtistsResponse.TopLevel data in SpotifyMasters)
+            {
+                        <tr>
+                            <td>@data.Artist</td>
+                            
+                        </tr>
+                }
+         }
+       </table>
 </div>
