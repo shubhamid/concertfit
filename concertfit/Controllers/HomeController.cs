@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace concertfit.Controllers
 {
-    [Route("TicketMaster")]
+    [Route("api")]
     [BindProperties(SupportsGet = true)]
     public class HomeController : Controller
     {

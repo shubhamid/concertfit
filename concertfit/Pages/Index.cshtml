@@ -2,9 +2,101 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
+    ConcertfitApiResponse.TopLevel[] topLevels = (ConcertfitApiResponse.TopLevel[])ViewData["concertfitResponse"];
 }
 
-<div class="text-center">
+<div>
     <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <p>Access the concertfit api <a href="/api">here</a>.</p>
 </div>
+<form>
+    <select onchange="showArtistDetails(this.value)">
+        <option value="" selected disabled hidden>Select an Artist</option>
+        @{
+            foreach (ConcertfitApiResponse.TopLevel topLevel in topLevels)
+            {
+                <option value=@topLevel.Artist>@topLevel.Artist</option>
+            }
+        }
+    </select>
+</form>
+
+<div id="artistDetails"></div>
+
+<script>
+    function showArtistDetails(str) {
+        if (str == "") {
+            document.getElementById("txtHint").innerHTML = "";
+            return;
+        }
+        if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        }
+        else {// code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("artistDetails").innerHTML = this.responseText;
+            }
+        }
+        xmlhttp.open("GET", "getartist?q=" + str, true);
+        xmlhttp.send();
+    }
+</script>
+
+<!--@{
+    foreach (ConcertfitApiResponse.TopLevel topLevel in topLevels)
+    {
+        <table>
+            <tr>
+                <td>
+                    <em>@topLevel.Artist</em>
+                    <br />
+                    <img src=@topLevel.Track[0].Album.Images[1].Url />
+                    <table class="table-responsive">
+                        <tr>
+                            <td class="font-weight-bold">Date & Time :</td>
+                            <td>@topLevel.Dates.Start.DateTime.UtcDateTime</td>
+                        </tr>
+                        <tr>
+                            <td class="font-weight-bold">TicketMaster URL :</td>
+                            <td><a href=@topLevel.EventUrl>Event URL</a></td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <div style="height:500px;width:500px;overflow:auto;">
+                        <div class="font-weight-bold">
+                            Top Songs
+                            <br />
+                        </div>
+                        <table>
+                            @{
+                                foreach (ConcertfitApiResponse.Track track in topLevel.Track)
+                                {
+                                    <tr>
+                                        <td>Track Name:</td>
+                                        <td>@track.Name</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Preview: </td>
+                                        <td>
+                                            <video controls name="media" width="100%" height="30%">
+                                                <source src=@track.PreviewUrl type="audio/mpeg" />
+                                            </video>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Complete Track </td>
+                                        <td><a href=@track.ExternalUrls.Spotify>on Spotify</a></td>
+                                    </tr>
+                                }
+                            }
+                        </table>
+                    </div>
+                </td>
+        </table>
+    }
+}
+    -->
