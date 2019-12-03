@@ -1,0 +1,746 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "array",
+  "title": "The Root Schema",
+  "items": {
+    "$id": "#/items",
+    "type": "object",
+    "title": "The Items Schema",
+    "required": [
+      "artist",
+      "track",
+      "eventName",
+      "eventUrl",
+      "dates"
+    ],
+    "properties": {
+      "artist": {
+        "$id": "#/items/properties/artist",
+        "type": "string",
+        "title": "The Artist Schema",
+        "default": "",
+        "examples": [
+          "Darius Rucker"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "track": {
+        "$id": "#/items/properties/track",
+        "type": "array",
+        "title": "The Track Schema",
+        "items": {
+          "$id": "#/items/properties/track/items",
+          "type": "object",
+          "title": "The Items Schema",
+          "required": [
+            "album",
+            "artists",
+            "disc_number",
+            "duration_ms",
+            "explicit",
+            "external_ids",
+            "external_urls",
+            "href",
+            "id",
+            "is_local",
+            "is_playable",
+            "name",
+            "popularity",
+            "preview_url",
+            "track_number",
+            "type",
+            "uri"
+          ],
+          "properties": {
+            "album": {
+              "$id": "#/items/properties/track/items/properties/album",
+              "type": "object",
+              "title": "The Album Schema",
+              "required": [
+                "album_type",
+                "artists",
+                "external_urls",
+                "href",
+                "id",
+                "images",
+                "name",
+                "release_date",
+                "release_date_precision",
+                "total_tracks",
+                "type",
+                "uri"
+              ],
+              "properties": {
+                "album_type": {
+                  "$id": "#/items/properties/track/items/properties/album/properties/album_type",
+                  "type": "integer",
+                  "title": "The Album_type Schema",
+                  "default": 0,
+                  "examples": [
+                    0
+                  ]
+                },
+                "artists": {
+                  "$id": "#/items/properties/track/items/properties/album/properties/artists",
+                  "type": "array",
+                  "title": "The Artists Schema",
+                  "items": {
+                    "$id": "#/items/properties/track/items/properties/album/properties/artists/items",
+                    "type": "object",
+                    "title": "The Items Schema",
+                    "required": [
+                      "external_urls",
+                      "href",
+                      "id",
+                      "name",
+                      "type",
+                      "uri"
+                    ],
+                    "properties": {
+                      "external_urls": {
+                        "$id": "#/items/properties/track/items/properties/album/properties/artists/items/properties/external_urls",
+                        "type": "object",
+                        "title": "The External_urls Schema",
+                        "required": [
+                          "spotify"
+                        ],
+                        "properties": {
+                          "spotify": {
+                            "$id": "#/items/properties/track/items/properties/album/properties/artists/items/properties/external_urls/properties/spotify",
+                            "type": "string",
+                            "title": "The Spotify Schema",
+                            "default": "",
+                            "examples": [
+                              "https://open.spotify.com/artist/7FY5V3XMwlNBPitEjXowHQ"
+                            ],
+                            "pattern": "^(.*)$"
+                          }
+                        }
+                      },
+                      "href": {
+                        "$id": "#/items/properties/track/items/properties/album/properties/artists/items/properties/href",
+                        "type": "string",
+                        "title": "The Href Schema",
+                        "default": "",
+                        "examples": [
+                          "https://api.spotify.com/v1/artists/7FY5V3XMwlNBPitEjXowHQ"
+                        ],
+                        "pattern": "^(.*)$"
+                      },
+                      "id": {
+                        "$id": "#/items/properties/track/items/properties/album/properties/artists/items/properties/id",
+                        "type": "string",
+                        "title": "The Id Schema",
+                        "default": "",
+                        "examples": [
+                          "7FY5V3XMwlNBPitEjXowHQ"
+                        ],
+                        "pattern": "^(.*)$"
+                      },
+                      "name": {
+                        "$id": "#/items/properties/track/items/properties/album/properties/artists/items/properties/name",
+                        "type": "string",
+                        "title": "The Name Schema",
+                        "default": "",
+                        "examples": [
+                          "Darius Rucker"
+                        ],
+                        "pattern": "^(.*)$"
+                      },
+                      "type": {
+                        "$id": "#/items/properties/track/items/properties/album/properties/artists/items/properties/type",
+                        "type": "integer",
+                        "title": "The Type Schema",
+                        "default": 0,
+                        "examples": [
+                          0
+                        ]
+                      },
+                      "uri": {
+                        "$id": "#/items/properties/track/items/properties/album/properties/artists/items/properties/uri",
+                        "type": "string",
+                        "title": "The Uri Schema",
+                        "default": "",
+                        "examples": [
+                          "spotify:artist:7FY5V3XMwlNBPitEjXowHQ"
+                        ],
+                        "pattern": "^(.*)$"
+                      }
+                    }
+                  }
+                },
+                "external_urls": {
+                  "$id": "#/items/properties/track/items/properties/album/properties/external_urls",
+                  "type": "object",
+                  "title": "The External_urls Schema",
+                  "required": [
+                    "spotify"
+                  ],
+                  "properties": {
+                    "spotify": {
+                      "$id": "#/items/properties/track/items/properties/album/properties/external_urls/properties/spotify",
+                      "type": "string",
+                      "title": "The Spotify Schema",
+                      "default": "",
+                      "examples": [
+                        "https://open.spotify.com/album/6cowf7fdb5dgKoglTekOK8"
+                      ],
+                      "pattern": "^(.*)$"
+                    }
+                  }
+                },
+                "href": {
+                  "$id": "#/items/properties/track/items/properties/album/properties/href",
+                  "type": "string",
+                  "title": "The Href Schema",
+                  "default": "",
+                  "examples": [
+                    "https://api.spotify.com/v1/albums/6cowf7fdb5dgKoglTekOK8"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "id": {
+                  "$id": "#/items/properties/track/items/properties/album/properties/id",
+                  "type": "string",
+                  "title": "The Id Schema",
+                  "default": "",
+                  "examples": [
+                    "6cowf7fdb5dgKoglTekOK8"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "images": {
+                  "$id": "#/items/properties/track/items/properties/album/properties/images",
+                  "type": "array",
+                  "title": "The Images Schema",
+                  "items": {
+                    "$id": "#/items/properties/track/items/properties/album/properties/images/items",
+                    "type": "object",
+                    "title": "The Items Schema",
+                    "required": [
+                      "height",
+                      "url",
+                      "width"
+                    ],
+                    "properties": {
+                      "height": {
+                        "$id": "#/items/properties/track/items/properties/album/properties/images/items/properties/height",
+                        "type": "integer",
+                        "title": "The Height Schema",
+                        "default": 0,
+                        "examples": [
+                          640
+                        ]
+                      },
+                      "url": {
+                        "$id": "#/items/properties/track/items/properties/album/properties/images/items/properties/url",
+                        "type": "string",
+                        "title": "The Url Schema",
+                        "default": "",
+                        "examples": [
+                          "https://i.scdn.co/image/73a9a4b18bcbb2649bfd91eb4636e14a4b1b52e8"
+                        ],
+                        "pattern": "^(.*)$"
+                      },
+                      "width": {
+                        "$id": "#/items/properties/track/items/properties/album/properties/images/items/properties/width",
+                        "type": "integer",
+                        "title": "The Width Schema",
+                        "default": 0,
+                        "examples": [
+                          640
+                        ]
+                      }
+                    }
+                  }
+                },
+                "name": {
+                  "$id": "#/items/properties/track/items/properties/album/properties/name",
+                  "type": "string",
+                  "title": "The Name Schema",
+                  "default": "",
+                  "examples": [
+                    "True Believers"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "release_date": {
+                  "$id": "#/items/properties/track/items/properties/album/properties/release_date",
+                  "type": "object",
+                  "title": "The Release_date Schema",
+                  "required": [
+                    "dateTime",
+                    "integer"
+                  ],
+                  "properties": {
+                    "dateTime": {
+                      "$id": "#/items/properties/track/items/properties/album/properties/release_date/properties/dateTime",
+                      "type": "string",
+                      "title": "The Datetime Schema",
+                      "default": "",
+                      "examples": [
+                        "2013-01-01T00:00:00+00:00"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "integer": {
+                      "$id": "#/items/properties/track/items/properties/album/properties/release_date/properties/integer",
+                      "type": "null",
+                      "title": "The Integer Schema",
+                      "default": null,
+                      "examples": [
+                        null
+                      ]
+                    }
+                  }
+                },
+                "release_date_precision": {
+                  "$id": "#/items/properties/track/items/properties/album/properties/release_date_precision",
+                  "type": "integer",
+                  "title": "The Release_date_precision Schema",
+                  "default": 0,
+                  "examples": [
+                    0
+                  ]
+                },
+                "total_tracks": {
+                  "$id": "#/items/properties/track/items/properties/album/properties/total_tracks",
+                  "type": "integer",
+                  "title": "The Total_tracks Schema",
+                  "default": 0,
+                  "examples": [
+                    12
+                  ]
+                },
+                "type": {
+                  "$id": "#/items/properties/track/items/properties/album/properties/type",
+                  "type": "integer",
+                  "title": "The Type Schema",
+                  "default": 0,
+                  "examples": [
+                    0
+                  ]
+                },
+                "uri": {
+                  "$id": "#/items/properties/track/items/properties/album/properties/uri",
+                  "type": "string",
+                  "title": "The Uri Schema",
+                  "default": "",
+                  "examples": [
+                    "spotify:album:6cowf7fdb5dgKoglTekOK8"
+                  ],
+                  "pattern": "^(.*)$"
+                }
+              }
+            },
+            "artists": {
+              "$id": "#/items/properties/track/items/properties/artists",
+              "type": "array",
+              "title": "The Artists Schema",
+              "items": {
+                "$id": "#/items/properties/track/items/properties/artists/items",
+                "type": "object",
+                "title": "The Items Schema",
+                "required": [
+                  "external_urls",
+                  "href",
+                  "id",
+                  "name",
+                  "type",
+                  "uri"
+                ],
+                "properties": {
+                  "external_urls": {
+                    "$id": "#/items/properties/track/items/properties/artists/items/properties/external_urls",
+                    "type": "object",
+                    "title": "The External_urls Schema",
+                    "required": [
+                      "spotify"
+                    ],
+                    "properties": {
+                      "spotify": {
+                        "$id": "#/items/properties/track/items/properties/artists/items/properties/external_urls/properties/spotify",
+                        "type": "string",
+                        "title": "The Spotify Schema",
+                        "default": "",
+                        "examples": [
+                          "https://open.spotify.com/artist/7FY5V3XMwlNBPitEjXowHQ"
+                        ],
+                        "pattern": "^(.*)$"
+                      }
+                    }
+                  },
+                  "href": {
+                    "$id": "#/items/properties/track/items/properties/artists/items/properties/href",
+                    "type": "string",
+                    "title": "The Href Schema",
+                    "default": "",
+                    "examples": [
+                      "https://api.spotify.com/v1/artists/7FY5V3XMwlNBPitEjXowHQ"
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "id": {
+                    "$id": "#/items/properties/track/items/properties/artists/items/properties/id",
+                    "type": "string",
+                    "title": "The Id Schema",
+                    "default": "",
+                    "examples": [
+                      "7FY5V3XMwlNBPitEjXowHQ"
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "name": {
+                    "$id": "#/items/properties/track/items/properties/artists/items/properties/name",
+                    "type": "string",
+                    "title": "The Name Schema",
+                    "default": "",
+                    "examples": [
+                      "Darius Rucker"
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "type": {
+                    "$id": "#/items/properties/track/items/properties/artists/items/properties/type",
+                    "type": "integer",
+                    "title": "The Type Schema",
+                    "default": 0,
+                    "examples": [
+                      0
+                    ]
+                  },
+                  "uri": {
+                    "$id": "#/items/properties/track/items/properties/artists/items/properties/uri",
+                    "type": "string",
+                    "title": "The Uri Schema",
+                    "default": "",
+                    "examples": [
+                      "spotify:artist:7FY5V3XMwlNBPitEjXowHQ"
+                    ],
+                    "pattern": "^(.*)$"
+                  }
+                }
+              }
+            },
+            "disc_number": {
+              "$id": "#/items/properties/track/items/properties/disc_number",
+              "type": "integer",
+              "title": "The Disc_number Schema",
+              "default": 0,
+              "examples": [
+                1
+              ]
+            },
+            "duration_ms": {
+              "$id": "#/items/properties/track/items/properties/duration_ms",
+              "type": "integer",
+              "title": "The Duration_ms Schema",
+              "default": 0,
+              "examples": [
+                298373
+              ]
+            },
+            "explicit": {
+              "$id": "#/items/properties/track/items/properties/explicit",
+              "type": "boolean",
+              "title": "The Explicit Schema",
+              "default": false,
+              "examples": [
+                false
+              ]
+            },
+            "external_ids": {
+              "$id": "#/items/properties/track/items/properties/external_ids",
+              "type": "object",
+              "title": "The External_ids Schema",
+              "required": [
+                "isrc"
+              ],
+              "properties": {
+                "isrc": {
+                  "$id": "#/items/properties/track/items/properties/external_ids/properties/isrc",
+                  "type": "string",
+                  "title": "The Isrc Schema",
+                  "default": "",
+                  "examples": [
+                    "USCN11200248"
+                  ],
+                  "pattern": "^(.*)$"
+                }
+              }
+            },
+            "external_urls": {
+              "$id": "#/items/properties/track/items/properties/external_urls",
+              "type": "object",
+              "title": "The External_urls Schema",
+              "required": [
+                "spotify"
+              ],
+              "properties": {
+                "spotify": {
+                  "$id": "#/items/properties/track/items/properties/external_urls/properties/spotify",
+                  "type": "string",
+                  "title": "The Spotify Schema",
+                  "default": "",
+                  "examples": [
+                    "https://open.spotify.com/track/3xdjjKMcMOFgo1eQrfbogM"
+                  ],
+                  "pattern": "^(.*)$"
+                }
+              }
+            },
+            "href": {
+              "$id": "#/items/properties/track/items/properties/href",
+              "type": "string",
+              "title": "The Href Schema",
+              "default": "",
+              "examples": [
+                "https://api.spotify.com/v1/tracks/3xdjjKMcMOFgo1eQrfbogM"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "id": {
+              "$id": "#/items/properties/track/items/properties/id",
+              "type": "string",
+              "title": "The Id Schema",
+              "default": "",
+              "examples": [
+                "3xdjjKMcMOFgo1eQrfbogM"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "is_local": {
+              "$id": "#/items/properties/track/items/properties/is_local",
+              "type": "boolean",
+              "title": "The Is_local Schema",
+              "default": false,
+              "examples": [
+                false
+              ]
+            },
+            "is_playable": {
+              "$id": "#/items/properties/track/items/properties/is_playable",
+              "type": "boolean",
+              "title": "The Is_playable Schema",
+              "default": false,
+              "examples": [
+                true
+              ]
+            },
+            "name": {
+              "$id": "#/items/properties/track/items/properties/name",
+              "type": "string",
+              "title": "The Name Schema",
+              "default": "",
+              "examples": [
+                "Wagon Wheel"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "popularity": {
+              "$id": "#/items/properties/track/items/properties/popularity",
+              "type": "integer",
+              "title": "The Popularity Schema",
+              "default": 0,
+              "examples": [
+                76
+              ]
+            },
+            "preview_url": {
+              "$id": "#/items/properties/track/items/properties/preview_url",
+              "type": "string",
+              "title": "The Preview_url Schema",
+              "default": "",
+              "examples": [
+                "https://p.scdn.co/mp3-preview/ec91f1e20a66deb0923b44f4394e3a276dff2990?cid=774b29d4f13844c495f206cafdad9c86"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "track_number": {
+              "$id": "#/items/properties/track/items/properties/track_number",
+              "type": "integer",
+              "title": "The Track_number Schema",
+              "default": 0,
+              "examples": [
+                3
+              ]
+            },
+            "type": {
+              "$id": "#/items/properties/track/items/properties/type",
+              "type": "integer",
+              "title": "The Type Schema",
+              "default": 0,
+              "examples": [
+                0
+              ]
+            },
+            "uri": {
+              "$id": "#/items/properties/track/items/properties/uri",
+              "type": "string",
+              "title": "The Uri Schema",
+              "default": "",
+              "examples": [
+                "spotify:track:3xdjjKMcMOFgo1eQrfbogM"
+              ],
+              "pattern": "^(.*)$"
+            }
+          }
+        }
+      },
+      "eventName": {
+        "$id": "#/items/properties/eventName",
+        "type": "string",
+        "title": "The Eventname Schema",
+        "default": "",
+        "examples": [
+          "Darius Rucker"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "eventUrl": {
+        "$id": "#/items/properties/eventUrl",
+        "type": "string",
+        "title": "The Eventurl Schema",
+        "default": "",
+        "examples": [
+          "https://www.ticketmaster.com/darius-rucker-cincinnati-ohio-05-07-2020/event/1600576FE7718D5D"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "dates": {
+        "$id": "#/items/properties/dates",
+        "type": "object",
+        "title": "The Dates Schema",
+        "required": [
+          "start",
+          "timezone",
+          "status",
+          "spanMultipleDays"
+        ],
+        "properties": {
+          "start": {
+            "$id": "#/items/properties/dates/properties/start",
+            "type": "object",
+            "title": "The Start Schema",
+            "required": [
+              "localDate",
+              "localTime",
+              "dateTime",
+              "dateTBD",
+              "dateTBA",
+              "timeTBA",
+              "noSpecificTime"
+            ],
+            "properties": {
+              "localDate": {
+                "$id": "#/items/properties/dates/properties/start/properties/localDate",
+                "type": "string",
+                "title": "The Localdate Schema",
+                "default": "",
+                "examples": [
+                  "2020-05-07T00:00:00+00:00"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "localTime": {
+                "$id": "#/items/properties/dates/properties/start/properties/localTime",
+                "type": "string",
+                "title": "The Localtime Schema",
+                "default": "",
+                "examples": [
+                  "2019-12-03T19:00:00+00:00"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "dateTime": {
+                "$id": "#/items/properties/dates/properties/start/properties/dateTime",
+                "type": "string",
+                "title": "The Datetime Schema",
+                "default": "",
+                "examples": [
+                  "2020-05-07T23:00:00+00:00"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "dateTBD": {
+                "$id": "#/items/properties/dates/properties/start/properties/dateTBD",
+                "type": "boolean",
+                "title": "The Datetbd Schema",
+                "default": false,
+                "examples": [
+                  false
+                ]
+              },
+              "dateTBA": {
+                "$id": "#/items/properties/dates/properties/start/properties/dateTBA",
+                "type": "boolean",
+                "title": "The Datetba Schema",
+                "default": false,
+                "examples": [
+                  false
+                ]
+              },
+              "timeTBA": {
+                "$id": "#/items/properties/dates/properties/start/properties/timeTBA",
+                "type": "boolean",
+                "title": "The Timetba Schema",
+                "default": false,
+                "examples": [
+                  false
+                ]
+              },
+              "noSpecificTime": {
+                "$id": "#/items/properties/dates/properties/start/properties/noSpecificTime",
+                "type": "boolean",
+                "title": "The Nospecifictime Schema",
+                "default": false,
+                "examples": [
+                  false
+                ]
+              }
+            }
+          },
+          "timezone": {
+            "$id": "#/items/properties/dates/properties/timezone",
+            "type": "integer",
+            "title": "The Timezone Schema",
+            "default": 0,
+            "examples": [
+              0
+            ]
+          },
+          "status": {
+            "$id": "#/items/properties/dates/properties/status",
+            "type": "object",
+            "title": "The Status Schema",
+            "required": [
+              "code"
+            ],
+            "properties": {
+              "code": {
+                "$id": "#/items/properties/dates/properties/status/properties/code",
+                "type": "integer",
+                "title": "The Code Schema",
+                "default": 0,
+                "examples": [
+                  0
+                ]
+              }
+            }
+          },
+          "spanMultipleDays": {
+            "$id": "#/items/properties/dates/properties/spanMultipleDays",
+            "type": "boolean",
+            "title": "The Spanmultipledays Schema",
+            "default": false,
+            "examples": [
+              false
+            ]
+          }
+        }
+      }
+    }
+  }
+}
