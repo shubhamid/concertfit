@@ -2,7 +2,25 @@
 @model concertfit.Pages.GroupAPIIntegrationModel
 @{
     ViewData["Title"] = "GroupAPIIntegration";
+    NobelLaureatesResponse.Laureate[] laureates = (NobelLaureatesResponse.Laureate[]) ViewData["groupApiResponse"];
 }
 
-<h1>GroupAPIIntegration</h1>
+<h1>Group API Integration - Nobel Laureates in US</h1>
 
+<table border="1">
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Date of Birth</th>
+    </tr>
+    @{ 
+        foreach(NobelLaureatesResponse.Laureate laureate in laureates)
+        {
+        <tr>
+            <td>@laureate.Firstname</td>
+            <td>@laureate.Surname</td>
+            <td>@laureate.Born</td>
+        </tr>
+        }
+    }
+</table>
